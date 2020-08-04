@@ -1,29 +1,38 @@
 <template>
   <div>
-  <b-navbar toggleable="md" type="dark" variant="dark">
-    <b-navbar-brand href="#">CRUD</b-navbar-brand>
-
-    <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-
-    <b-collapse id="nav-collapse" is-nav>
-      <b-navbar-nav>
-        <b-nav-item  to="/ProductsList">Liste des produits</b-nav-item>
-        <b-nav-item to="/FormAddProduct" >Ajouter un produit</b-nav-item>
-      </b-navbar-nav>
-    </b-collapse>
-  </b-navbar>
-
-  <!-- <div class="topnav" id="myTopnav">
-  <a href="#home" class="active">Home</a>
-  <a href="#news">News</a>
-  <a href="#contact">Contact</a>
-  <a href="#about">About</a>
-  <a href="javascript:void(0);" class="icon" onclick="navBarToggler()">
-    <i class="fa fa-bars"></i>
-  </a>
-</div> -->
-
-  </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <router-link class="nav-link" to="/#">CRUD MEVN</router-link>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon "></span>
+      </button>
+          <div class="navbar-brand d-block d-sm-none " href="index">
+    </div> 
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+        <li class="nav-item">
+          <a class="nav-link" href="#"></a>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/ProductsList">Liste des produits</router-link>
+        </li>
+        <!-- <li class="nav-item">
+          <router-link class="nav-link" to="/FormAddProduct">Ajouter un produit</router-link>
+        </li> -->
+        <li class="nav-item">
+          <router-link class="nav-link" to="/IndexShop">Boutique</router-link>
+        </li>
+      </ul>
+      <ul class="navbar-nav mt-2 d-none d-sm-block mr-4 ">
+        <li class="nav-item">
+          <a href="https://www.linkedin.com/in/dimitri-bonnet18" class="mr-2" target="_blank"><i class="fab fa-linkedin-in fa-lg"></i></a>
+          <a href="https://github.com/Dimitri-bonnet"  target="_blank"><i class="fab fa-github fa-lg"></i></a>
+        </li>
+      </ul>
+    </div>
+    
+    </nav>
+    
+  </div> 
 </template>
 
 <script>
@@ -37,68 +46,15 @@ export default {
 </script>
 
 <style scoped>
-/* a{
-  color: black;
-  text-decoration: none;
+a{
+  color: #2ecc71 !important;
 }
-
 a:hover{
-    color: gray;
-    text-shadow: 0 0 .65px #333, 0 0 .65px #333;
-} */
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  color: #292b2c !important;
+  font-weight: bold;
+}
+button span{
+ background: blue;
 }
 
-.topnav {
-  overflow: hidden;
-  background-color: #333;
-}
-
-.topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.topnav a.active {
-  background-color: #4CAF50;
-  color: white;
-}
-
-.topnav .icon {
-  display: none;
-}
-
-@media screen and (max-width: 600px) {
-  .topnav a:not(:first-child) {display: none;}
-  .topnav a.icon {
-    float: right;
-    display: block;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .topnav.responsive {position: relative;}
-  .topnav.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-}
 </style>

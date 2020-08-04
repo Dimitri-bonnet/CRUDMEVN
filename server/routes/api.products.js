@@ -24,6 +24,7 @@ router.post("/create-product", async (req, res) => {
       price: body.price,
     }).save()
     res.json("ok")
+    console.log("product add")
   } catch {
     next(e)
   }
@@ -42,23 +43,8 @@ router.delete("/delete-product/:id", (req, res, next) => {
     }
   })
 })
-
-/* Edit product by ID Avoir*/
-// router.get("/edit-product/:id", (req, res, next) => {
-//   console.log("dddddd")
-//   Product.findById(req.params.id, (error, data) => {
-//     if (error) {
-//       console.log("ko")
-//       return next(error)
-//     } else {
-//       console.log("ccccc")
-//       res.json(data)
-//     }
-//   })
-// })
-
+/* Update product by ID */
 router.route("/update-product/:id").post((req, res, next) => {
-  console.log("here")
   Product.findByIdAndUpdate(
     req.params.id,
     {
@@ -66,7 +52,9 @@ router.route("/update-product/:id").post((req, res, next) => {
     },
     (error, data) => {
       if (error) {
+        console.log("no")
         return next(error)
+        
       } else {
         res.json(data)
         console.log("Student successfully updated!")

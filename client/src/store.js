@@ -1,7 +1,7 @@
 import Vuex from "vuex"
 import Vue from "vue"
 import axios from "axios"
-import router from "./routes"
+
 
 Vue.use(Vuex)
 
@@ -41,21 +41,10 @@ const product = {
         context.commit("updateIsLoading", true)
         await axios.post("/api/products/create-product", product)
         context.commit("addProductSuccess")
-        router.push("/ProductsList")
       } catch (err) {
         context.commit("addProductError", err)
       }
-    },
-    /* async fetchProduct(context){
-            try{
-                context.commit('updateIsLoading', true);
-                const response = await  axios.get('/api/products');
-                console.log(response);
-                context.commit("fetchProductsSuccess", response.data)
-            }catch(err){
-                console.log(err);
-            }
-        }   */
+    }
   },
 }
 

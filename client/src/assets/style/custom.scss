@@ -1,0 +1,14 @@
+@import "~bootstrap/scss/bootstrap";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+h1, h2, h3, h4, h5, h6, p, td, th, a, input{
+    font-family: 'Roboto', sans-serif;
+}
+h4 i{
+    color: #2ecc71;
+}
+.container-fluid{
+    min-height: 94vh;
+  }
+

@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <the-header></the-header>
     <div>
-       <router-view></router-view>
+      <the-header></the-header>
+       <router-view ></router-view>
     </div>
   </div>
 </template>
@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "./assets/custom.scss";
+@import "./assets/style/custom.scss";
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 html, body{
   margin: 0;

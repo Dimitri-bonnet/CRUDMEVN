@@ -5,14 +5,16 @@ import './http';
 import store from './store'
 import BootstrapVue from 'bootstrap-vue';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
-/* import { navBarToggler } from './assets/navbar/navBar'; */
-
 
 Vue.use(BootstrapVue);
 Vue.config.productionTip = false
 
 new Vue({
   router,
-  store, 
+  store,
+  /* Redirection pour ma route Index */
+  mounted() {
+    this.$router.replace('/') // added this
+  },
   render: h => h(App),
 }).$mount('#app')

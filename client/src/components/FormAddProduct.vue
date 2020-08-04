@@ -1,32 +1,34 @@
 <template>
-  <div class="container-fluid bg-dark p-3">
-    <div class="row  ">
-      <div class="col-12 text-center text-white">
-        <h4> <i class="fas fa-plus mr-2"></i>Ajouter un produit</h4>
+  <div class="container-fluid bg-dark">
+    <div class="row justify-content-center ">
+      <div class="col-12 text-center text-white p-5">
+        <h4> 
+          <i class="fas fa-plus mr-2"></i>Ajouter un produit
+        </h4>
       </div>
-    </div>
-    <div class="row justify-content-center p-4">
-      <div class="col-10 col-md-8 col-lg-6 text-white">
+      <div class="col-12 col-md-8 col-lg-4 text-white">
         <form @submit="trySubmit">
-           <div v-if ="formErrors.length" class=" alert alert-danger rounded p-3 text-center">
+           <!-- <div v-if ="formErrors.length" class=" alert alert-danger rounded p-3 text-center">
                 <h6  v-for="error in formErrors" :key="error"> {{ error }}</h6>
             </div>
             <div v-if ="success.length" class=" alert alert-success rounded p-3 text-center">
                 <h6  v-for="success in success" :key="success"> {{ success }}</h6>
-            </div>
+            </div> -->
           <div class="form-group">
-            <label for="formGroupExampleInput">Image du produit</label>
-            <input v-model="form.img" type="text" name="img" class="form-control" placeholder="Image du produit">
+            <label for="formGroupExampleInput"><i class="fas fa-image "></i> Image du produit</label>
+            <input v-model="form.img" type="text" name="img" class="form-control" id="formGroupExampleInput" placeholder="Image du produit">
           </div>
           <div class="form-group">
-            <label for="formGroupExampleInput2">Nom du produit</label>
+            <label for="formGroupExampleInput2"><i class="fas fa-signature"></i> Nom du produit</label>
             <input v-model="form.title" type="text" name="title" class="form-control" id="formGroupExampleInput2" placeholder="Nom du produit">
           </div>
           <div class="form-group">
-            <label for="formGroupExampleInput2">Prix du produit</label>
-            <input v-model.number="form.price" type="number" name="price" step="any" class="form-control" id="formGroupExampleInput2" placeholder="Prix du produit">
+            <label for="formGroupExampleInput3"><i class="fas fa-tag"></i> Prix du produit</label>
+            <input v-model.number="form.price" type="number" name="price" step="any" class="form-control" id="formGroupExampleInput3" placeholder="Prix du produit">
           </div>
-          <button class="btn btn-primary" :class="{'disabled' : isLoading }">Ajouter le produit</button>
+          <div class="text-center mt-5">
+            <button  :class="{'disabled' : isLoading }">Ajouter le produit</button>
+          </div>
         </form>
       </div>  
     </div>      
@@ -86,5 +88,43 @@ export default {
 </script>
 
 <style scoped>
+
+button{
+  width: 140px;
+  height: 45px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+button:hover{
+  background-color: #2ecc71;
+  box-shadow: 0px 2px 4px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(1px);
+}
+
+i{
+  color: #2ecc71 ;
+}
+
+input:focus {
+  background-color: white  !important;
+  border: 1px #2ecc71 solid;
+  box-shadow: none !important;
+}
+input {
+  border: none;
+  background: #e7e7e7 ;
+  font-family: 'Roboto', sans-serif;
+}
 
 </style>
